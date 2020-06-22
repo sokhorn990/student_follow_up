@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <!-- icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-primary shadow-lg" id="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand text-light" href="{{ url('/home') }}">
+                <!-- <img src="https://pathfindertalent.com/wp-content/uploads/2016/01/Screen-Shot-2013-01-24-at-7.54.32-PM.png" alt="Not found" style="width:500px;height:600px;"> -->
+                    <h3>Sudent Follow-up System </h3>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                        @endif
+                        @else
+
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{Auth::user()->firstName}} {{Auth::user()->lastName}} <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+
+                        @endguest
+                    </ul>
+                </div>
+            </div>
+        </nav>
+       
+        
+        <main class="py-4">
+        @if(Auth::check())
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="navbar navbar-expand-md bg-light navbar-dark">
+        
+        
+                        <div class="collapse navbar-collapse mt-3" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link text-primary" href="{{ url('/home') }}">Follow Up</a>
+                            </li>
+                            <li class="nav-item text-primary">
+                                <a class="nav-link text-primary" href="{{route('outFollowUp')}}">Out Of Followup</a>
+                            </li>   
+                            </ul>
+                        </div>  
+                    </nav>
+                </div>
+            </div>
+        </div>
+        @endif
+            @yield('content')
+        </main>
+    </div>
+</body>
+</html>
+
