@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3>Edit Student</h3>
-                        <img class="mx-auto d-block" src="{{asset('img/'.$student->picture)}}" class="img-fluid rounded-circle">
+                        <img class="mx-auto d-block img-fluid rounded-circle" src="{{asset('img/'.$student->picture)}}" >
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{route('students.update', $student->id)}}" enctype="multipart/form-data">

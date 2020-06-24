@@ -31,10 +31,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light fixed-top bg-primary shadow-lg" id="navbar">
             <div class="container-fluid">
-                <a class="navbar-brand text-light" href="{{ url('/home') }}">
-                <!-- <img src="https://pathfindertalent.com/wp-content/uploads/2016/01/Screen-Shot-2013-01-24-at-7.54.32-PM.png" alt="Not found" style="width:500px;height:600px;"> -->
-                    <h3>Sudent Follow-up System </h3>
-                </a>
+                <a class="navbar-brand text-light" href="{{ url('/home') }}"> <h3>Sudent Follow-up System </h3></a>
+              
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -85,8 +83,6 @@
                 <div class="row">
                     <div class="col-12">
                         <nav class="navbar navbar-expand-md bg-light navbar-dark">
-        
-        
                         <div class="collapse navbar-collapse mt-3" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                             <li class="nav-item">

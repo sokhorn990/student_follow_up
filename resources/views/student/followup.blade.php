@@ -17,14 +17,14 @@
                     @if($student->activeFollowup == 1)
                         
                     <tr>
-                        <td><img class="mx-auto d-block" src="{{asset('img/'.$student->picture)}}"></td>
+                        <td><img width="304" height="236" class="mx-auto d-block" src="{{asset('img/'.$student->picture)}}"></td>
                         <td>{{$student->firstName}}</td>
                         <td>{{$student->lastName}}</td>
                         <td>{{$student->class}}</td>
                         <td>
-                            <a href="{{route('outOfFollowup', $student->id)}}"><i class='fas fa-user-alt-slash text-success'></i></a>| &nbsp;
-                            <a href="{{route('students.edit', $student->id)}}"><i class='fas fa-user-edit'></i></a>| &nbsp;
-                            <a href="{{route('students.show', $student->id)}}"><i class='fas fa-eye text-dark'></i></a>
+                           
+                            <a href="{{route('students.edit', $student->id)}}"><i class='fas fa-user-edit'></i></a>|&nbsp;
+                            <a href="{{route('students.show', $student->id)}}"><i style='font-size:15px' class='far fa-envelope text-dark'></i></a>
                         </td>
                         @endif
                         

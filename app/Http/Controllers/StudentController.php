@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Student;
+use App\Comment;
 class StudentController extends Controller
 {
     /**
@@ -73,9 +74,10 @@ class StudentController extends Controller
     public function show($id)
     {
         $student = Student::find($id);
-        return view('student.detailInfoOfStu', compact('student'));
+        $comments = $student->comments;
+        return view('student.detailInfoOfStu', compact('student', 'comments'));
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *

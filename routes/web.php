@@ -22,9 +22,12 @@ Route::resource('students', 'StudentController');
 
 Route::get('/outFollowUp', 'StudentController@outFollowUp')->name('outFollowUp');
 
-
 Route::get('/outOfFollowup/{id}', 'StudentController@outOfFollowup')->name('outOfFollowup');
 Route::get('/backToFollowup/{id}', 'StudentController@backToFollowup')->name('backToFollowup');
 
 
 
+Route::post('/addCommentToStu/{id}', 'CommentController@addCommentToStu')->name('addCommentToStu');
+
+Route::resource('comments', 'CommentController');
+Route::get('/destroy/{id}', 'CommentController@destroy')->name('destroy');

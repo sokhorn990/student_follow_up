@@ -21,7 +21,7 @@
                         <td>{{$student->lastName}}</td>
                         <td>{{$student->class}}</td>
                         <td class=" text-center">
-                            <a href="{{route('backToFollowup', $student->id)}}"><i class='fas fa-user-times text-danger'></i></i></a>
+                            
                         </td>
                         @endif
                         
