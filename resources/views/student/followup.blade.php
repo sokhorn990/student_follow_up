@@ -22,8 +22,8 @@
                         <td>{{$student->lastName}}</td>
                         <td>{{$student->class}}</td>
                         <td>
-                           
-                            <a href="{{route('students.edit', $student->id)}}"><i class='fas fa-user-edit'></i></a>|&nbsp;
+                            <a href="{{route('outOfFollowup', $student->id)}}"><i class='fas fa-user-alt-slash text-success'></i></a> &nbsp;
+                            <a href="{{route('students.edit', $student->id)}}"><i class='fas fa-user-edit'></i></a> &nbsp;
                             <a href="{{route('students.show', $student->id)}}"><i style='font-size:15px' class='far fa-envelope text-dark'></i></a>
                         </td>
                         @endif

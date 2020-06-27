@@ -4,11 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-use App\User;
-
 class Comment extends Model
 {
-    
     public function user(){
         return $this->belongsTo(User::class);
     }
@@ -17,5 +14,4 @@ class Comment extends Model
         return $this->belongsTo(User::class);
     }
 
-    
 }

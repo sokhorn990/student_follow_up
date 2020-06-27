@@ -76,6 +76,7 @@ class StudentController extends Controller
         $student = Student::find($id);
         $comments = $student->comments;
         return view('student.detailInfoOfStu', compact('student', 'comments'));
+        
     }
     
     /**

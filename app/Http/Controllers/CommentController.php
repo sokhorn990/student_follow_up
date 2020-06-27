@@ -20,8 +20,10 @@ class CommentController extends Controller
     public function addCommentToStu(Request $request, $id){
         $student = Student::find($id);
         $comment = new Comment();
+
         $comment->comment = $request->comment;
         $comment->student_id = $student->id;
+        
         $comment->user_id = auth::id();
         $comment->save();
         return redirect('students/'.$student->id); 
@@ -63,6 +65,7 @@ class CommentController extends Controller
     {
         $comment = Comment::find($id);
         $comment->comment = $request->comment;
+
         $comment->save();
         return redirect('students/'.$comment->student['id']);
     }
