@@ -8,6 +8,7 @@
             <div class="card">
                 <div class="card-header text-center">
                     <h3>Add Student</h3>
+                    
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('students.store') }}" enctype="multipart/form-data">

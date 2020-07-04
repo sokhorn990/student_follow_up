@@ -38,6 +38,7 @@ class CreateUsersTable extends Migration
                 'position_id' => 1,
                 'password' => bcrypt('password'),
                 'remember_token' => Str::random(10),
+                'role'=>1,
             )
         );
         DB::table('users')->insert(
