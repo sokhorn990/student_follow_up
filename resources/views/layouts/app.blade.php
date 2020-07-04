@@ -33,7 +33,8 @@
             <div class="container-fluid">
                 <a class="navbar-brand text-light" href="{{ url('/home') }}"> <h3>Sudent Follow-up System </h3></a>
               
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -85,10 +86,10 @@
                         <nav class="navbar navbar-expand-md bg-light navbar-dark">
                         <div class="collapse navbar-collapse mt-3" id="navbarSupportedContent">
                             <ul class="navbar-nav">
-                            <li class="nav-item">
+                                <li class="nav-item">
                                 <a class="nav-link text-primary" href="{{ url('/home') }}">Follow Up</a>
                             </li>
-                            <li class="nav-item text-primary">
+                            <li class="nav-item text-primary"> 
                                 <a class="nav-link text-primary" href="{{route('outFollowUp')}}">Out Of Followup</a>
                             </li>   
                             </ul>
